@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 @Configuration
 public class MySqlDataSourceBean {
     @Bean(name = "MySqlDataSource")
+    @Primary
     public DataSource getDataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 

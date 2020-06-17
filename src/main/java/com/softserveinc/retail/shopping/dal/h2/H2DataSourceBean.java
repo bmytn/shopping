@@ -10,7 +10,6 @@ import javax.sql.DataSource;
 @Configuration
 public class H2DataSourceBean {
     @Bean(name = "H2DataSource")
-    @Primary
     public DataSource getDataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
