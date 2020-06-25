@@ -14,7 +14,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan("com.softserveinc.retail.shopping.dal")
+@ComponentScan({"com.softserveinc.retail.shopping.dal",
+				"com.softserveinc.retail.shopping.bl",
+				"com.softserveinc.retail.shopping.rest"})
 @EnableJpaRepositories(basePackages = "com.softserveinc.retail.shopping.dal.repository")
 public class ShoppingApplication implements CommandLineRunner {
 
@@ -40,13 +42,13 @@ public class ShoppingApplication implements CommandLineRunner {
 //
 //		// Dishes
 //		System.out.println(dishRepository.fetchDishesById(1).get(0).getName());
-		Dish dish = dishRepository.getDishById(2);
-
-		Component component = componentRepository.getComponentById(3);
-
-		for(Dish d:component.getDishes()){
-			System.out.println(d.getName());
-		}
+//		Dish dish = dishRepository.getDishById(2);
+//
+//		Component component = componentRepository.getComponentById(3);
+//
+//		for(Dish d:component.getDishes()){
+//			System.out.println(d.getName());
+//		}
 	}
 
 }

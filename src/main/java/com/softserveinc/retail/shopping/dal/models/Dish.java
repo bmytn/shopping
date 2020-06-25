@@ -1,5 +1,7 @@
 package com.softserveinc.retail.shopping.dal.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.NamedNativeQuery;
@@ -24,8 +26,9 @@ public class Dish {
 
     public Dish(){}
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @Fetch(FetchMode.JOIN)
+    @JsonIgnoreProperties("dishes")
     private List<Component> components;
 
     public Integer getId() {
